@@ -27,6 +27,9 @@ public class FlightController : MonoBehaviour
 
     private void HandleRotation()
     {
+        // Pitch – Arrow Up/Down
+        float pitch = Input.GetAxis("Vertical");
+        transform.Rotate(Vector3.right, pitch * pitchSpeed * Time.deltaTime);
     }
 
     private void HandleThrust()
