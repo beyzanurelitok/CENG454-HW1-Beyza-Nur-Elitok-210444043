@@ -30,6 +30,10 @@ public class FlightController : MonoBehaviour
         // Pitch – Arrow Up/Down
         float pitch = Input.GetAxis("Vertical");
         transform.Rotate(Vector3.right, pitch * pitchSpeed * Time.deltaTime);
+
+        // Yaw – Arrow Left/Right
+        float yaw = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.up, yaw * yawSpeed * Time.deltaTime);
     }
 
     private void HandleThrust()
