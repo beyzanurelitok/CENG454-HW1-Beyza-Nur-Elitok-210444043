@@ -34,6 +34,12 @@ public class FlightController : MonoBehaviour
         // Yaw – Arrow Left/Right
         float yaw = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, yaw * yawSpeed * Time.deltaTime);
+
+        // Roll – Q / E
+        float roll = 0f;
+        if (Input.GetKey(KeyCode.Q)) roll = 1f;
+        if (Input.GetKey(KeyCode.E)) roll = -1f;
+        transform.Rotate(Vector3.forward, roll * rollSpeed * Time.deltaTime);
     }
 
     private void HandleThrust()
